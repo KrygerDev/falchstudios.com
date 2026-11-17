@@ -1,7 +1,7 @@
 # Falch Studios – hjemmeside
 
 Hjemmesiden for Falch Studios: et alsidigt digitalt studie i Danmark (spil, apps, web, grafik og lyd).
-Adresse: https://krygerdev.github.io/
+Adresse: https://falchstudios.com/ (domænet er ved at blive sat op – se "Adresse og domæne" nederst).
 
 Version 4 (17. november 2026): Studiet hedder nu Falch Studios (før: Emil Studio).
 Nyt ordmærke i skriften Cinzel. Guld-ikonet med E'et er det samme – E'et står for Emil.
@@ -68,3 +68,15 @@ Mappen `brand/` har logoet som filer til andre steder:
 
 Spillets billeder er kopier fra `Kingdom-Defense\03-Grafik\Til Test 8` (11. november 2026).
 Delingsbillederne (`og-*.jpg`) og ikonerne er lavet til siden.
+
+## Adresse og domæne
+
+Siden skal ligge på Emils eget domæne, `falchstudios.com`. Alle adresser i siderne,
+`sitemap.xml` og `robots.txt` peger derfor på `https://falchstudios.com/`.
+
+Vigtigt: Privatlivspolitikken for Kingdom Defense skal blive på
+`https://krygerdev.github.io/kingdom-defense-privacy/`, fordi den adresse bruges af spillet.
+Derfor skal domænet sættes på et selvstændigt GitHub-projekt og ikke på
+`KrygerDev.github.io` (ellers flytter GitHub også privatlivspolitikken over på domænet).
+
+Indtil domænet er sat op, ligger den første udgave af siden stadig på KrygerDev's GitHub Pages.

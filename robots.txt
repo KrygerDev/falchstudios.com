@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://krygerdev.github.io/sitemap.xml
+Sitemap: https://falchstudios.com/sitemap.xml
