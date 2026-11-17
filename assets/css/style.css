@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Emil Studio – fælles stil for alle sider (version 3: lys og elegant)
+   Falch Studios – fælles stil for alle sider (version 4: lyst tema, nyt navn og logo)
    Farver: varm elfenben, hvide kort, mørkeblå tekst og guld som detalje.
    Skrift: Outfit til overskrifter (ligger i assets/fonts, fri licens).
    ========================================================================== */
@@ -30,7 +30,7 @@
   --gold-ink: #8a6009;
   --on-gold: #1b1404;
   --teal: #1f9bb5;
-  --logo-accent: #b7801b;
+  --logo-accent: #a9770f;
   --radius: 18px;
   --radius-l: 28px;
   --shadow-1: 0 1px 2px rgba(15, 28, 43, 0.04), 0 14px 34px -18px rgba(15, 28, 43, 0.18);
@@ -170,7 +170,8 @@ h2 em {
   min-height: var(--header-h);
 }
 
-/* Logoet: Play-E-ikonet + ordmærket EMIL STUDIO (tegnet som vektor, ens overalt) */
+/* Logoet: Play-E-ikonet + ordmærket FALCH STUDIOS i skriften Cinzel
+   (tegnet som vektor, ens overalt – der hentes ingen ekstra skrift) */
 .brand {
   display: inline-flex;
   align-items: center;
@@ -180,15 +181,15 @@ h2 em {
   text-decoration: none;
 }
 .brand:hover { color: var(--text); }
-.logo-mark { width: 40px; height: 40px; flex: none; overflow: visible; filter: drop-shadow(0 4px 8px rgba(176, 122, 18, 0.28)); }
-.logo-word { width: 122px; height: 17px; flex: none; }
+.logo-mark { width: 42px; height: 42px; flex: none; overflow: visible; filter: drop-shadow(0 4px 8px rgba(176, 122, 18, 0.28)); }
+.logo-word { width: 112.5px; height: 36px; flex: none; }
 .logo-play { transition: transform 0.35s var(--ease); }
 .brand:hover .logo-play { transform: translateX(1.8px); }
 /* Meget smalle telefoner: lidt mindre logo, så toplinjen bliver på én linje */
 @media (max-width: 370px) {
   .brand { gap: 9px; }
-  .logo-mark { width: 34px; height: 34px; }
-  .logo-word { width: 100px; height: 14px; }
+  .logo-mark { width: 36px; height: 36px; }
+  .logo-word { width: 97px; height: 31px; }
   .header-tools { gap: 6px; }
   .header-tools .lang { padding-inline: 10px; }
 }
@@ -870,7 +871,7 @@ h2 em {
 .cover__ring--2 { width: 30%; border: 1px solid rgba(15, 28, 43, 0.1); background: rgba(255, 255, 255, 0.5); animation: none; }
 .cover__logo { position: relative; display: grid; justify-items: center; gap: 14px; }
 .cover__logo .logo-mark { width: 68px; height: 68px; filter: drop-shadow(0 12px 18px rgba(176, 122, 18, 0.38)); }
-.cover__logo .logo-word { width: 150px; height: 21px; color: var(--text); }
+.cover__logo .logo-word { width: 150px; height: 48px; color: var(--text); }
 .work__body { display: flex; flex: 1; flex-direction: column; gap: 12px; padding: 22px 24px 24px; }
 .work__body h3 { margin: 0; font-size: 1.3rem; }
 .work__body p { margin: 0; color: var(--text-2); font-size: 1rem; }

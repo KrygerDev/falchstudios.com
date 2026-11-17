@@ -1,4 +1,4 @@
-/* Emil Studio – små ting, der gør siden levende.
+/* Falch Studios – små ting, der gør siden levende.
    Siden virker også helt uden JavaScript. Ingen cookies, ingen sporing, intet gemmes. */
 (function () {
   "use strict";
