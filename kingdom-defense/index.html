@@ -13,6 +13,7 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="preload" href="../assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Emil Studio">
   <meta property="og:title" content="Kingdom Defense: Sealed Worlds">
@@ -29,8 +30,9 @@
   <script>document.documentElement.classList.add("js")</script>
   <script src="../assets/js/main.js" defer></script>
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#indhold">Gå til indhold</a>
+  <div class="progress" aria-hidden="true"><span data-progress></span></div>
 
   <svg class="svg-defs" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -41,6 +43,7 @@
     <symbol id="logo-word" viewBox="-2.6 -2.6 195.51 27.2"><path d="M11.88 0H0V22H11.88M0 11H9.5M19.38 22V0L28.62 13.2L37.86 0V22M45.36 0V22M52.86 0V22H63.42" fill="none" stroke="currentColor" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.92 1.96A5.1 5.1 0 1 0 5.9 10.21A5.9 5.9 0 1 1 1.25 19.73M19.29 0H32.93M26.11 0V22M40.43 0V15.18A6.82 6.82 0 0 0 54.07 15.18V0M61.57 22V0H62.89A11 11 0 0 1 62.89 22ZM81.39 0V22M88.89 11A11 11 0 1 1 110.89 11A11 11 0 1 1 88.89 11Z" transform="translate(79.42 0)" fill="none" stroke="#f6c75a" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></symbol>
@@ -63,9 +66,11 @@
       </a>
       <nav class="site-nav" id="site-nav" aria-label="Hovedmenu">
         <ul>
-          <li><a href="../#det-kan-jeg">Det kan jeg</a></li>
+          <li><a href="../#ydelser">Ydelser</a></li>
           <li><a href="../#projekter">Projekter</a></li>
-          <li><a href="../#om">Om mig</a></li>
+          <li><a href="../#proces">Proces</a></li>
+          <li><a href="../#om">Om studiet</a></li>
+          <li><a class="nav-cta" href="../#kontakt">Kontakt</a></li>
         </ul>
       </nav>
       <div class="header-tools">
@@ -82,6 +87,7 @@
   <main id="indhold">
 
     <section class="kd-hero" aria-labelledby="kd-title">
+      <canvas class="stars" data-stars aria-hidden="true"></canvas>
       <div class="container">
         <a class="breadcrumb" href="../#projekter"><svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg> Alle projekter</a>
         <div class="kd-hero__grid">
@@ -115,12 +121,32 @@
             <img class="seal__gun seal__gun--w" src="../assets/img/kd/art/turret_arctic.png" width="512" height="512" alt="">
           </div>
         </div>
+
         <ul class="stats reveal">
-          <li><strong>20</strong> forseglede verdener</li>
-          <li><strong>20</strong> kanoner</li>
-          <li><strong>4</strong> slags tårne</li>
-          <li><strong>11</strong> sprog</li>
+          <li><strong data-count="20">20</strong> forseglede verdener</li>
+          <li><strong data-count="20">20</strong> kanoner</li>
+          <li><strong data-count="4">4</strong> slags tårne</li>
+          <li><strong data-count="11">11</strong> sprog</li>
         </ul>
+
+        <div class="lane reveal" aria-hidden="true">
+          <div class="lane__road"></div>
+          <span class="lane__tower lane__tower--1"><img src="../assets/img/kd/art/tower_flak.png" width="256" height="256" alt=""></span>
+          <span class="lane__tower lane__tower--2"><img src="../assets/img/kd/art/tower_tesla.png" width="256" height="256" alt=""></span>
+          <span class="lane__tower lane__tower--3"><img src="../assets/img/kd/art/tower_cryo.png" width="256" height="256" alt=""></span>
+          <span class="lane__tower lane__tower--4"><img src="../assets/img/kd/art/tower_mortar.png" width="256" height="256" alt=""></span>
+          <span class="lane__shot"></span><span class="lane__shot" style="--d:-.55s"></span><span class="lane__shot" style="--d:-1.1s"></span>
+          <img class="lane__enemy" style="--w:62px;--y:44%;--t:17s;--d:-1s;--x:46%" src="../assets/img/kd/art/heavy.png" width="256" height="256" alt="">
+          <img class="lane__enemy" style="--w:50px;--y:58%;--t:15s;--d:-5s;--x:60%" src="../assets/img/kd/art/splitter.png" width="256" height="256" alt="">
+          <img class="lane__enemy" style="--w:46px;--y:42%;--t:16s;--d:-8.5s;--x:72%" src="../assets/img/kd/art/medic.png" width="256" height="256" alt="">
+          <img class="lane__enemy" style="--w:92px;--y:50%;--t:24s;--d:-13s;--x:88%" src="../assets/img/kd/art/boss_mini_1.png" width="320" height="320" alt="">
+          <img class="lane__enemy" style="--w:48px;--y:60%;--t:14s;--d:-10s;--x:34%" src="../assets/img/kd/art/phantom.png" width="256" height="256" alt="">
+          <img class="lane__enemy lane__enemy--fly" style="--w:46px;--y:30%;--t:12s;--d:-3s;--x:54%" src="../assets/img/kd/art/drone.png" width="256" height="256" alt="">
+          <img class="lane__enemy lane__enemy--fly" style="--w:56px;--y:70%;--t:13s;--d:-7s;--x:80%" src="../assets/img/kd/art/gunship.png" width="256" height="256" alt="">
+          <img class="lane__base" src="../assets/img/kd/art/hq_command_bunker.png" width="512" height="512" alt="">
+          <img class="lane__gun" src="../assets/img/kd/art/turret_gold.png" width="512" height="512" alt="">
+        </div>
+        <p class="lane-note">Illustration med figurer fra spillet – ikke en optagelse.</p>
       </div>
     </section>
 
@@ -130,43 +156,43 @@
           <p class="eyebrow">Spillet</p>
           <h2 id="features-title">Det venter <em>dig</em></h2>
         </div>
-        <ul class="features">
-          <li class="feature reveal">
+        <ul class="features" data-stagger>
+          <li class="feature spot reveal">
             <span class="icon-badge" aria-hidden="true"><svg class="i"><use href="#i-lock"/></svg></span>
             <h3>20 forseglede verdener</h3>
             <p>Fra brændende skove til dybhavet og fra en neonby til kanten af et sort hul. Hver verden er forseglet, indtil du har klaret den før – eller selv bryder seglet.</p>
           </li>
-          <li class="feature reveal">
+          <li class="feature spot reveal">
             <span class="icon-badge" aria-hidden="true"><svg class="i"><use href="#i-crown"/></svg></span>
             <h3>Bosser, der kæmper imod</h3>
             <p>Kæmpemaskiner og monstre snor sig over vejen, undviger dine skud, beskyder basen, forsvinder ud af rækkevidde og tilkalder hjælp.</p>
           </li>
-          <li class="feature reveal">
+          <li class="feature spot reveal">
             <span class="icon-badge" aria-hidden="true"><svg class="i"><use href="#i-target"/></svg></span>
             <h3>20 kanoner</h3>
             <p>Den ene vildere end den anden: gatling-kanoner, railguns, floder af ild, lyn der springer – og en kanon, der åbner et sort hul.</p>
           </li>
-          <li class="feature reveal">
+          <li class="feature spot reveal">
             <span class="icon-badge" aria-hidden="true"><svg class="i"><use href="#i-jet"/></svg></span>
             <h3>Tilkald flyene</h3>
             <p>Tryk AIRSTRIKE, og piloten svarer over radioen. Du hører flyene, længe før du ser dem, og kampen går i slowmotion, mens de brøler hen over.</p>
           </li>
-          <li class="feature reveal">
+          <li class="feature spot reveal">
             <span class="icon-badge" aria-hidden="true"><svg class="i"><use href="#i-bolt"/></svg></span>
             <h3>Hver verden har sine regler</h3>
             <p>Tåge, der skjuler fjenden, sandstorme, der blænder kanonerne, lyn, vulkanudbrud, hackere og lav tyngdekraft.</p>
           </li>
-          <li class="feature reveal">
+          <li class="feature spot reveal">
             <span class="icon-badge" aria-hidden="true"><svg class="i"><use href="#i-tower"/></svg></span>
             <h3>Byg dit forsvar</h3>
             <p>Flak-, tesla-, cryo- og mortertårne samt miner, pigge, barrikader og EMP-fælder.</p>
           </li>
-          <li class="feature reveal">
+          <li class="feature spot reveal">
             <span class="icon-badge" aria-hidden="true"><svg class="i"><use href="#i-star"/></svg></span>
             <h3>Altid noget mere</h3>
             <p>Skattekonvojer at jagte, forsyninger at gribe, daglig mission, endeløs tilstand, rang fra rekrut til levende legende, medaljer og stjerner.</p>
           </li>
-          <li class="feature reveal">
+          <li class="feature spot reveal">
             <span class="icon-badge" aria-hidden="true"><svg class="i"><use href="#i-phone"/></svg></span>
             <h3>Til én hånd</h3>
             <p>Lavet til korte pauser. Spillet kræver ingen konto og virker offline.</p>
@@ -185,7 +211,7 @@
         <figure class="gallery-banner reveal">
           <img src="../assets/img/kd/kd-banner.jpg" srcset="../assets/img/kd/kd-banner-640.jpg 640w, ../assets/img/kd/kd-banner.jpg 1024w" sizes="(min-width: 1160px) 1160px, 100vw" width="1024" height="500" loading="lazy" alt="Kingdom Defense-logoet omgivet af en kampvogn, en kæmpe knæler, en lavakæmpe og et sort hul fra spillet.">
         </figure>
-        <ul class="sprites">
+        <ul class="sprites" data-stagger>
           <li class="reveal"><figure class="sprite"><img src="../assets/img/kd/art/boss_mini_1.png" width="320" height="320" loading="lazy" alt=""><figcaption><span>Boss</span>Mini-boss</figcaption></figure></li>
           <li class="reveal"><figure class="sprite"><img src="../assets/img/kd/art/heavy.png" width="256" height="256" loading="lazy" alt=""><figcaption><span>Fjende</span>Tung kampvogn</figcaption></figure></li>
           <li class="reveal"><figure class="sprite"><img src="../assets/img/kd/art/phantom.png" width="256" height="256" loading="lazy" alt=""><figcaption><span>Fjende</span>Fantom</figcaption></figure></li>
@@ -206,7 +232,7 @@
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">Fakta</p>
-          <h2 id="fakta-title">Kort fortalt</h2>
+          <h2 id="fakta-title">Kort <em>fortalt</em></h2>
         </div>
         <dl class="facts reveal">
           <div><dt>Titel</dt><dd>Kingdom Defense: Sealed Worlds</dd></div>
@@ -221,6 +247,7 @@
         <p class="note reveal"><svg class="i" aria-hidden="true"><use href="#i-sparkles"/></svg><span>Grafikken i spillet er lavet med hjælp fra AI-værktøjer. <a href="https://krygerdev.github.io/kingdom-defense-privacy/">Læs privatlivspolitikken for spillet</a>.</span></p>
         <div class="actions">
           <a class="btn btn--ghost" href="../#projekter"><svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg> Alle projekter</a>
+          <a class="btn btn--primary" href="../#kontakt">Kontakt studiet <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
         </div>
       </div>
     </section>
@@ -235,7 +262,16 @@
             <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo-base"/><use class="logo-play" href="#logo-play"/></svg>
             <svg class="logo-word" viewBox="0 0 195.51 27.2" aria-hidden="true"><use href="#logo-word"/></svg><span class="sr-only">Emil Studio</span>
           </a>
-          <p>Spil og apps fra Danmark.</p>
+          <p>Spil, apps og web fra Danmark.</p>
+        </div>
+        <div>
+          <h2>Studiet</h2>
+          <ul>
+            <li><a href="../#ydelser">Ydelser</a></li>
+            <li><a href="../#projekter">Projekter</a></li>
+            <li><a href="../#proces">Proces</a></li>
+            <li><a href="../#om">Om studiet</a></li>
+          </ul>
         </div>
         <div>
           <h2>Projekter</h2>
@@ -245,24 +281,26 @@
           </ul>
         </div>
         <div>
-          <h2>Find mig</h2>
+          <h2>Kontakt</h2>
           <ul>
+            <li><a href="https://www.linkedin.com/in/emilkryger/" rel="me">LinkedIn</a></li>
             <li><a href="https://github.com/KrygerDev" rel="me">GitHub</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Om siden</h2>
-          <ul>
-            <li>Ingen cookies og ingen statistik.</li>
-            <li>Ligger på GitHub Pages.</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Emil Studio</p>
+        <p>© 2026 Emil Studio. Ingen cookies og ingen statistik. Skriften Outfit bruges under <a href="../assets/fonts/OFL.txt">fri licens</a>.</p>
         <a class="lang" href="../en/kingdom-defense/" hreflang="en" lang="en">English</a>
       </div>
     </div>
   </footer>
+
+  <a class="to-top" href="#top" data-to-top aria-label="Til toppen"><svg class="i" aria-hidden="true"><use href="#i-up"/></svg></a>
+
+  <div class="langbar" data-langbar hidden>
+    <span lang="en">This page is also available in English.</span>
+    <a href="../en/kingdom-defense/" hreflang="en" lang="en">Switch to English</a>
+    <button type="button" data-langbar-close aria-label="Luk">✕</button>
+  </div>
 </body>
 </html>

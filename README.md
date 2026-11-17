@@ -1,7 +1,11 @@
 # Emil Studio – hjemmeside
 
-Emils egen studie- og porteføljeside: spil og apps fra Danmark.
-Adresse, når den er lagt ud: https://krygerdev.github.io/
+Hjemmesiden for Emil Studio: et alsidigt digitalt studie i Danmark (spil, apps, web, grafik og lyd).
+Adresse: https://krygerdev.github.io/
+
+Version 2 (17. november 2026): Siden taler som et professionelt studie, ikke som en personlig
+portefølje. Ydelser vises som kort med små levende billeder, de runde knapper om logoet hopper
+og fører ned til hver ydelse, og spilsiden har en levende illustration.
 
 ## Hvad ligger hvor
 
@@ -13,10 +17,18 @@ Adresse, når den er lagt ud: https://krygerdev.github.io/
 | `en/kingdom-defense/index.html` | Spillets side på engelsk |
 | `404.html` | Vises, hvis en side ikke findes |
 | `assets/css/style.css` | Farver og udseende for alle sider |
-| `assets/js/main.js` | Mobilmenu og blide animationer (siden virker også uden) |
+| `assets/js/main.js` | Mobilmenu, stjernehimmel og blide animationer (siden virker også uden) |
 | `assets/img/` | Logo, ikoner, delingsbilleder og spillets billeder |
+| `assets/fonts/` | Skriften Outfit (fri licens, se `OFL.txt`) |
 
 Siden er ren HTML og CSS. Der er ingen cookies, ingen statistik og intet hentes fra andre sider.
+
+## Projekter på forsiden
+
+- Kingdom Defense: Sealed Worlds (egen underside).
+- Emil Studio – identitet og hjemmeside (link til koden).
+- Tre webprojekter fra GitHub, vist som "Koncept": webshop (`Grejfreak_produk`),
+  nyhedssite (`News`) og `FindWay`. Forsiderne er tegnede illustrationer, ikke skærmbilleder.
 
 ## Når Kingdom Defense udkommer
 
