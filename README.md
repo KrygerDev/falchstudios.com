@@ -3,6 +3,9 @@
 Hjemmesiden for Emil Studio: et alsidigt digitalt studie i Danmark (spil, apps, web, grafik og lyd).
 Adresse: https://krygerdev.github.io/
 
+Version 3 (17. november 2026): Lyst og elegant tema (elfenben, hvide kort, mørkeblå tekst, guld).
+Emil syntes, at det mørke tema var alt for mørkt. Kun bunden af siden er mørkeblå.
+
 Version 2 (17. november 2026): Siden taler som et professionelt studie, ikke som en personlig
 portefølje. Ydelser vises som kort med små levende billeder, de runde knapper om logoet hopper
 og fører ned til hver ydelse, og spilsiden har en levende illustration.
