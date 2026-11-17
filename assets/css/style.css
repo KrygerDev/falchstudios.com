@@ -951,8 +951,13 @@ h2 em {
 }
 .cta__mark { width: 68px; height: 68px; margin: 0 auto 22px; overflow: visible; filter: drop-shadow(0 14px 22px rgba(176, 122, 18, 0.4)); }
 .cta h2 { max-width: 15em; margin-inline: auto; }
-.cta p:not(.eyebrow) { max-width: 34em; margin-inline: auto; color: var(--text-2); font-size: 1.14rem; }
+.cta p:not(.eyebrow) { max-width: 34em; margin-inline: auto; color: var(--text-2); font-size: 1.14rem; text-wrap: balance; }
 .cta .actions { justify-content: center; }
+/* Mail-adressen står som almindelig tekst, så den også kan kopieres */
+.cta__mail { color: var(--text); font-weight: 600; text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.cta__mail:hover { color: var(--gold-ink); }
+/* Holder en sætning samlet, så den skifter linje som en helhed */
+.keep { display: inline-block; }
 
 /* ---------- Bund (den eneste mørke flade: mørkeblå med guld) ---------- */
 
@@ -965,7 +970,8 @@ h2 em {
 }
 .footer-grid { display: grid; gap: 30px; }
 @media (min-width: 600px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 980px) { .footer-grid { grid-template-columns: 1.5fr 0.8fr 1.2fr 0.8fr; } }
+@media (min-width: 980px) { .footer-grid { grid-template-columns: 1.4fr 0.8fr 1.2fr auto; } }
+.site-footer a[href^="mailto:"] { white-space: nowrap; }
 .footer-grid .brand { margin-bottom: 12px; color: #f4efe6; }
 .site-footer .logo-mark { filter: none; }
 .site-footer h2 {

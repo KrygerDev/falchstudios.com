@@ -29,6 +29,9 @@ og fører ned til hver ydelse, og spilsiden har en levende illustration.
 
 Siden er ren HTML og CSS. Der er ingen cookies, ingen statistik og intet hentes fra andre sider.
 
+Kontakt-mailen `kontakt@falchstudios.com` står under Kontakt på begge forsider og i bunden af
+alle sider (valgt af Emil 17. november 2026). Skifter adressen, skal den rettes alle de steder.
+
 ## Projekter på forsiden
 
 - Kingdom Defense: Sealed Worlds (egen underside).
