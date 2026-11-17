@@ -79,7 +79,16 @@ Siden skal ligge på Emils eget domæne, `falchstudios.com`. Alle adresser i sid
 
 Vigtigt: Privatlivspolitikken for Kingdom Defense skal blive på
 `https://krygerdev.github.io/kingdom-defense-privacy/`, fordi den adresse bruges af spillet.
-Derfor skal domænet sættes på et selvstændigt GitHub-projekt og ikke på
-`KrygerDev.github.io` (ellers flytter GitHub også privatlivspolitikken over på domænet).
+Derfor ligger siden i sit eget GitHub-projekt, `KrygerDev/falchstudios.com`, som har domænet
+(filen `CNAME`), og ikke i `KrygerDev.github.io` (ellers flytter GitHub også
+privatlivspolitikken over på domænet).
 
-Indtil domænet er sat op, ligger den første udgave af siden stadig på KrygerDev's GitHub Pages.
+Domænet er købt hos Simply.com. Dér skal web-posterne pege på GitHub Pages:
+- `falchstudios.com`: fire A-poster – `185.199.108.153`, `185.199.109.153`,
+  `185.199.110.153` og `185.199.111.153`
+- `www.falchstudios.com`: én CNAME-post – `krygerdev.github.io`
+
+Mail-posterne (MX og SPF) må ikke røres, ellers stopper mailen på domænet.
+
+Den gamle adresse, https://krygerdev.github.io/, skal sende folk videre til
+falchstudios.com, når domænet virker.
