@@ -35,9 +35,17 @@ alle sider (valgt af Emil 17. november 2026). Skifter adressen, skal den rettes 
 ## Projekter på forsiden
 
 - Kingdom Defense: Sealed Worlds (egen underside).
-- Falch Studios – identitet og hjemmeside (link til koden).
-- Tre webprojekter fra GitHub, vist som "Koncept": webshop (`Grejfreak_produk`),
-  nyhedssite (`News`) og `FindWay`. Forsiderne er tegnede illustrationer, ikke skærmbilleder.
+- Under "Apps" (tilføjet 18. november 2026): VIPE SEO Robot, Farmergo og Agrivyo.
+  Deres kode ligger privat på GitHub, så kortene har ikke noget link ("Koden er privat").
+  Agrivyo er ikke bygget endnu og står som "På vej".
+- Under "Web og identitet": Falch Studios – identitet og hjemmeside (link til koden) og
+  tre webprojekter fra GitHub, vist som "Koncept": webshop (`Grejfreak_produk`),
+  nyhedssite (`News`) og `FindWay`.
+
+Forsiderne på kortene er tegnede illustrationer, ikke skærmbilleder.
+
+Alle links, der fører væk fra siden (GitHub, LinkedIn, privatlivspolitikken), åbner i en ny fane.
+Knapperne til LinkedIn og GitHub bruger de to tjenesters egne logoer (`i-linkedin` og `i-github`).
 
 ## Når Kingdom Defense udkommer
 

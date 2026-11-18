@@ -873,7 +873,17 @@ h2 em {
 .cover__logo .logo-mark { width: 68px; height: 68px; filter: drop-shadow(0 12px 18px rgba(176, 122, 18, 0.38)); }
 .cover__logo .logo-word { width: 150px; height: 48px; color: var(--text); }
 .work__body { display: flex; flex: 1; flex-direction: column; gap: 12px; padding: 22px 24px 24px; }
-.work__body h3 { margin: 0; font-size: 1.3rem; }
+.work__body h3,
+.work__body h4 { margin: 0; font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; text-wrap: balance; }
+/* Overskrift over en gruppe af kort (Apps, Web og identitet) */
+.work-title { display: flex; align-items: center; gap: 14px; margin: 46px 0 0; color: var(--gold-ink); font-size: 0.86rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+.work-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.work-title + .work { margin-top: 18px; }
+@media (min-width: 1000px) { .work--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* Kort uden link (koden er privat): de løfter sig ikke, når man peger på dem */
+.work__card--static:hover { transform: none; border-color: var(--line); box-shadow: var(--shadow-1); }
+.work__card--static:hover .cover > svg { scale: 1; }
+.work__lock { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; color: var(--muted); font-family: var(--font-display); font-size: 0.95rem; font-weight: 500; }
 .work__body p { margin: 0; color: var(--text-2); font-size: 1rem; }
 .work__card:hover .stretched { color: var(--gold-ink); }
 .work__card:hover .link-arrow .i { translate: 3px -3px; }
@@ -953,6 +963,10 @@ h2 em {
 .cta h2 { max-width: 15em; margin-inline: auto; }
 .cta p:not(.eyebrow) { max-width: 34em; margin-inline: auto; color: var(--text-2); font-size: 1.14rem; text-wrap: balance; }
 .cta .actions { justify-content: center; }
+/* Kendte logoer (LinkedIn og GitHub) er udfyldte, ikke stregtegninger */
+.i--brand { fill: currentColor; stroke: none; }
+.btn .i--brand { width: 1.3em; height: 1.3em; }
+.i--linkedin { color: #0a66c2; }
 /* Mail-adressen står som almindelig tekst, så den også kan kopieres */
 .cta__mail { color: var(--text); font-weight: 600; text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 4px; overflow-wrap: anywhere; }
 .cta__mail:hover { color: var(--gold-ink); }
@@ -972,6 +986,7 @@ h2 em {
 @media (min-width: 600px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 980px) { .footer-grid { grid-template-columns: 1.4fr 0.8fr 1.2fr auto; } }
 .site-footer a[href^="mailto:"] { white-space: nowrap; }
+.site-footer .with-icon { display: inline-flex; align-items: center; gap: 9px; }
 .footer-grid .brand { margin-bottom: 12px; color: #f4efe6; }
 .site-footer .logo-mark { filter: none; }
 .site-footer h2 {
