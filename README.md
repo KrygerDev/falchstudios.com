@@ -29,6 +29,11 @@ og fører ned til hver ydelse, og spilsiden har en levende illustration.
 
 Siden er ren HTML og CSS. Der er ingen cookies, ingen statistik og intet hentes fra andre sider.
 
+Vigtigt ved ændringer i `style.css` eller `main.js`: Alle fem sider henter dem med et
+versionsnummer (`style.css?v=5` og `main.js?v=5`). Tæl nummeret én op i alle fem sider, hver gang
+en af de to filer ændres. Ellers viser browsere den gamle udgave i op til ti minutter, og siden
+ser forkert ud imens.
+
 Kontakt-mailen `kontakt@falchstudios.com` står under Kontakt på begge forsider og i bunden af
 alle sider (valgt af Emil 17. november 2026). Skifter adressen, skal den rettes alle de steder.
 
